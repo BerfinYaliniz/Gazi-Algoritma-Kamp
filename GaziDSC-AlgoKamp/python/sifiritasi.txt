@@ -1,0 +1,14 @@
+def secerek_sirala(Vektor):
+    for i in range(len(Vektor)-1):
+        enk = Vektor[i]
+        enk_indis = i
+        for j in range(i+1, len(Vektor)):
+            if Vektor[j] < enk:
+                enk = Vektor[j]
+                enk_indis = j
+        depo = Vektor[i]
+        Vektor[i] = Vektor[enk_indis]
+        Vektor[enk_indis] = depo
+    print(Vektor)
+a = [2,4,1,6,4,0,0]
+secerek_sirala(a)

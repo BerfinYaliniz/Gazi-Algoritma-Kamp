@@ -1,0 +1,23 @@
+<?php 
+header('Content-Type: text/html; charset=utf-8');
+date_default_timezone_set('Europe/Istanbul');//Yerel Zaman Seçme
+
+$saat=date("G"); 
+if($saat >=6 and $saat <10) {echo "Günaydın";}
+elseif($saat >= 10 and $saat <17) {echo "İyi günler";}
+elseif($saat >= 17 and $saat <20) {echo "İyi akşamlar ";}
+elseif($saat >= 20 and $saat <00) {echo "İyi geceler ";}
+
+else{echo "Esenlikler Dilerim";}
+?><?php 
+header('Content-Type: text/html; charset=utf-8');
+date_default_timezone_set('Europe/Istanbul');//Yerel Zaman Seçme
+
+$saat=date("G"); 
+if($saat >=6 and $saat <10) {echo "Günaydın";}
+elseif($saat >= 10 and $saat <17) {echo "İyi günler";}
+elseif($saat >= 17 and $saat <20) {echo "İyi akşamlar ";}
+elseif($saat >= 20 and $saat <00) {echo "İyi geceler ";}
+
+else{echo "Esenlikler Dilerim";}
+?>
