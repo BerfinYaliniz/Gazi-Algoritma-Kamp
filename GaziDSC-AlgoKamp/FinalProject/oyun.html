@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<title>KAĞIT, TAŞ, MAKAS OYUNU</title>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="oyun.css">
+
+</head>
+<body>
+ 
+<div id="liste">
+<img src="kagit.png" id="kagit" width="300" height="300" data-id="0">
+<img src="makas.png" id="makas" width="300" height="300" data-id="1">
+<img src="tas.png" id="tas" width="300" height="300" data-id="2">
+</div> 
+<div id="pc-sonuc">
+<img src="seçim.png" id="pc-secim" width="300" height="300" alt="pc seçimi">
+</div>
+<div id="sonuc">
+</div>
+<iframe name="Power Türk" width="300" height="100" src="https://www.radyo-dinle.com/radyorenkli/power-turk-siyah.html" frameborder="0" scrolling="no" allow="autoplay" allowfullscreen></iframe>
+ 
+<script>
+var liste=["kagit.png","makas.png","tas.png"];
+var kagit=document.getElementById("kagit");
+var makas=document.getElementById("makas");
+var tas=document.getElementById("tas");
+var pcSecim=document.getElementById("pc-secim");
+var sonucYazdir=document.getElementById("sonuc");
+ 
+ 
+kagit.onclick=secimYap;
+makas.onclick=secimYap;
+tas.onclick=secimYap;
+ 
+ 
+function secimYap(){
+var pc= RasgeleKagit();
+ 
+var secim= this.dataset.id;
+if(pc==0 && secim==0)
+{
+sonuc="ikinizde aynı seçimi yaptınız";
+}
+else if(pc==0 && secim==1)
+{
+sonuc="Kazandın, makas kağıdı keser";
+}
+else if(pc==0 && secim==2)
+{
+sonuc="Kaybettin, kağıt taşı sarar";
+}
+else if(pc==1 && secim==0)
+{
+sonuc="Kaybettin, makas kağıdı keser";
+}
+else if(pc==1 && secim==1)
+{
+sonuc="ikinizde aynı seçimi yaptınız";
+}
+else if(pc==1 && secim==2)
+{
+sonuc="Kazandın, Taş makası kırar";
+}
+else if(pc==2 && secim==0)
+{
+sonuc="Kazandın, kağıt taşı sarar";
+}
+else if(pc==2 && secim==1)
+{
+sonuc="Kaybettin, Taş makası kırar";
+}
+else if(pc==2 && secim==2)
+{
+sonuc="ikinizde aynı seçimi yaptınız";
+}
+ 
+sonucYazdir.innerHTML=sonuc;
+}
+ 
+function RasgeleKagit(){
+var sayi= Math.round(Math.random()*2);
+pcSecim.src=liste[sayi]; 
+ 
+return sayi;
+}
+ 
+</script>
+</body>
+</html>

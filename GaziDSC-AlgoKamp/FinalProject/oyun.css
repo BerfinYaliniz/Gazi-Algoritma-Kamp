@@ -1,0 +1,22 @@
+
+body{
+background: #d396c6;
+}
+#liste img{
+padding:5px;
+border:1px #232333 solid;
+ 
+}
+#sonuc{
+float:left;
+width: 120px;
+height: 150px;
+font-size:2em;
+padding:20px;
+background: #ffffff;
+ 
+}
+#pc-sonuc{
+float:left;
+ 
+}
